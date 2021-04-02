@@ -12,8 +12,7 @@ export class Post extends React.Component{
     componentDidMount() {
         console.log("Компонет Post отрисован");
 
-        fetch("http://v90355zw.beget.tech/php12/getPosts.php"
-        )
+        fetch("http://v90355zw.beget.tech/php12/getPosts.php")
             .then(response=>response.json())
             .then(result=>{
                 console.log(result);
