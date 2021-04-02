@@ -30,7 +30,9 @@ export class Post extends React.Component{
                 <p>Автор: {this.state.author}</p>
                 <p>Статья: {this.state.title}</p>
             </div>
-            <div><p>{this.state.text}</p></div>
+            <div>
+                <p>{this.state.text}</p>
+            </div>
         </div>
     }
 }
