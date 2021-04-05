@@ -17,6 +17,7 @@ export class Reg extends React.Component {
         event.preventDefault();
         const formData = new FormData();
         formData.append("name",this.state.name);
+        console.log(this.state);
         formData.append("lastname",this.state.lastname);
         formData.append("email", this.state.email);
         formData.append("pass", this.state.password);
@@ -39,7 +40,6 @@ export class Reg extends React.Component {
                 body: formData
             }).then(response=>response.json())
                 .then(result=>{
-                    console.log(result);
                     if(result.result === "exist"){
                         this.setState({
                             info: "Такой email уже существует!"
@@ -57,25 +57,25 @@ export class Reg extends React.Component {
     }
     render(){
         return <div style={{backgroundImage: `url(http://wallpapers-image.ru/1920x1080/mountains/wallpapers/mountains-wallpapers-1920x1080-00019.jpg)`,height:550}}>
-           <div className="col-md-5 my-5 mx-auto" style={{width:300, height:400}}>
-            <h1 style={{color:"DarkBlue"}}>Регистрация</h1>
+            <div className="col-md-5  mx-auto" style={{width:300, height:400}}>
+                <h1 style={{color:"DarkBlue"}}>Регистрация</h1>
             <form onSubmit={this.sendForm}>
-            <div className="mb-3">
-                <input name="name" type="text" className="form-control" placeholder="Имя пользователя"/>
-            </div>
-             <div className="mb-3">
-                 <input name="lastname" type="text" className="form-control" placeholder="Фамилия"/>
-             </div>
-            <div className="mb-3">
-                <input value={this.state.email} onChange={this.handleInputChange} name="email" type="email" className="form-control" placeholder="Email"/>
-                <p style={{color:"red"}}>{this.state.info}</p>
-            </div>
-            <div className="mb-3">
-                <input name="pass" type="password" className="form-control" placeholder="Пароль"/>
-            </div>
-            <div className="mb-3">
-                <input type="submit" className="form-control btn btn-primary" value="Зарегистрироваться"/>
-            </div>
+                <div className="mb-3">
+                    <input value={this.state.name} onChange={this.handleInputChange} name="name" type="text" className="form-control" placeholder="Имя пользователя"/>
+                </div>
+                <div className="mb-3">
+                    <input value={this.state.lastname} onChange={this.handleInputChange} name="lastname" type="text" className="form-control" placeholder="Фамилия"/>
+                </div>
+                <div className="mb-3">
+                    <input value={this.state.email} onChange={this.handleInputChange} name="email" type="email" className="form-control" placeholder="Email"/>
+                    <p style={{color:"Cyan"}}>{this.state.info}</p>
+                </div>
+                <div className="mb-3">
+                    <input value={this.state.pass} onChange={this.handleInputChange} name="pass" type="password" className="form-control" placeholder="Пароль"/>
+                </div>
+                <div className="mb-3">
+                     <input type="submit" className="form-control btn btn-primary" value="Зарегистрироваться"/>
+                </div>
             </form>
             </div>
         </div>
