@@ -59,24 +59,24 @@ export class Reg extends React.Component {
         return <div style={{backgroundImage: `url(http://wallpapers-image.ru/1920x1080/mountains/wallpapers/mountains-wallpapers-1920x1080-00019.jpg)`,height:550}}>
             <div className="col-md-5  mx-auto" style={{width:300, height:400}}>
                 <h1 style={{color:"DarkBlue"}}>Регистрация</h1>
-            <form onSubmit={this.sendForm}>
-                <div className="mb-3">
-                    <input value={this.state.name} onChange={this.handleInputChange} name="name" type="text" className="form-control" placeholder="Имя пользователя"/>
-                </div>
-                <div className="mb-3">
-                    <input value={this.state.lastname} onChange={this.handleInputChange} name="lastname" type="text" className="form-control" placeholder="Фамилия"/>
-                </div>
-                <div className="mb-3">
-                    <input value={this.state.email} onChange={this.handleInputChange} name="email" type="email" className="form-control" placeholder="Email"/>
-                    <p style={{color:"Cyan"}}>{this.state.info}</p>
-                </div>
-                <div className="mb-3">
-                    <input value={this.state.pass} onChange={this.handleInputChange} name="pass" type="password" className="form-control" placeholder="Пароль"/>
-                </div>
-                <div className="mb-3">
-                     <input type="submit" className="form-control btn btn-primary" value="Зарегистрироваться"/>
-                </div>
-            </form>
+                <form onSubmit={this.sendForm}>
+                    <div className="mb-3">
+                        <input value={this.state.name} onChange={this.handleInputChange} name="name" type="text" className="form-control" placeholder="Имя пользователя"/>
+                    </div>
+                    <div className="mb-3">
+                         <input value={this.state.lastname} onChange={this.handleInputChange} name="lastname" type="text" className="form-control" placeholder="Фамилия"/>
+                    </div>
+                    <div className="mb-3">
+                        <input value={this.state.email} onChange={this.handleInputChange} name="email" type="email" className="form-control" placeholder="Email"/>
+                        <p style={{color:"Cyan"}}>{this.state.info}</p>
+                     </div>
+                    <div className="mb-3">
+                         <input value={this.state.pass} onChange={this.handleInputChange} name="pass" type="password" className="form-control" placeholder="Пароль"/>
+                    </div>
+                    <div className="mb-3">
+                         <input type="submit" className="form-control btn btn-primary" value="Зарегистрироваться"/>
+                    </div>
+                </form>
             </div>
         </div>
     }
